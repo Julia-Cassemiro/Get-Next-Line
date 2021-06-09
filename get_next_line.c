@@ -63,15 +63,12 @@ char	*ft_line(char *s)
 
 int	get_next_line(int fd, char **line)
 {
-	char		*buff;
+	char		buff[BUFFER_SIZE + 1];
 	static char	*save;
 	int			count;
 
 	count = 1;
 	if (fd < 0 || !line || BUFFER_SIZE <= 0)
-		return (-1);
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buff)
 		return (-1);
 	while (ft_verific_newline(save) != 1 && count != 0)
 	{
@@ -81,7 +78,6 @@ int	get_next_line(int fd, char **line)
 		buff[count] = '\0';
 		save = ft_strjoin(save, buff);
 	}
-	free(buff);
 	*line = ft_line(save);
 	save = ft_save_the_next(save);
 	if (count == 0)
