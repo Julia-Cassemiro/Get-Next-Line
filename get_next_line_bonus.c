@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:27:57 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/09 13:02:17 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/09 13:08:46 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	get_next_line(int fd, char **line)
 		save[fd] = ft_strjoin(save[fd], buff);
 	}
 	*line = ft_line(save[fd]);
-	save[fd] = ft_save_the_next(save[fd]);
+	save = ft_save_the_next(save[fd]);
 	if (count == 0)
 		return (0);
 	return (1);
