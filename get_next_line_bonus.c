@@ -6,11 +6,11 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:27:57 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/09 12:57:43 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/09 13:02:17 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_save_the_next(char *s)
 {
