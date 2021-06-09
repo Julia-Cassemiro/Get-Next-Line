@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 16:11:52 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/08 23:25:20 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/09 14:25:53 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,14 @@ int	ft_verific_newline(char *str)
 		i++;
 	}
 	return (0);
+}
+
+char	ft_verific_buff(int fd, char **line)
+{
+	if (fd < 0 || !line || BUFFER_SIZE <= 0)
+		return (-1);
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buff)
+		return (-1);
+	return (buff);
 }

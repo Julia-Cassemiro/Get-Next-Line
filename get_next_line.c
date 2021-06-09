@@ -68,11 +68,7 @@ int	get_next_line(int fd, char **line)
 	int			count;
 
 	count = 1;
-	if (fd < 0 || !line || BUFFER_SIZE <= 0)
-		return (-1);
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buff)
-		return (-1);
+	buff = ft_verific_buff(fd, line);
 	while (ft_verific_newline(save) != 1 && count != 0)
 	{
 		count = read(fd, buff, BUFFER_SIZE);
