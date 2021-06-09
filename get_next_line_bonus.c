@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:27:57 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/09 16:13:44 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/09 16:14:56 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_line(char *s)
 int	get_next_line(int fd, char **line)
 {
 	char		*buff;
-	static char	*save[OPEN_MAX];
+	static char	*save;
 	int			count;
 
 	buff = ft_verific_buff(fd, line);
