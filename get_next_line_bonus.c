@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:27:57 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/09 15:17:48 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/09 15:19:04 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_line(char *s)
 	str = malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (0);
-	i = -1;
+	i = 0;
 	while (s[i] && s[i] != '\n')
 	{
 		str[i] = s[i];
