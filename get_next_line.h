@@ -21,6 +21,6 @@ int			ft_verific_newline(char *str);
 size_t		ft_strlen(const char *str);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
-char	*ft_verific_buff(int fd, char **line);
+char		*ft_verific_buff(int fd, char **line);
 
 #endif
