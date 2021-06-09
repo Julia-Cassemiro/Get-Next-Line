@@ -67,10 +67,10 @@ int	get_next_line(int fd, char **line)
 	static char	*save;
 	int			count;
 
-	count = 1;
 	buff = ft_verific_buff(fd, line);
 	if(!buff)
 		return (-1);
+	count = 1;
 	while (ft_verific_newline(save) != 1 && count != 0)
 	{
 		count = read(fd, buff, BUFFER_SIZE);
