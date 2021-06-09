@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-int			ft_next_line(int fd, char **line);
+int			get_next_line(int fd, char **line);
 int			ft_verific_newline(char *str);
 size_t		ft_strlen(const char *str);
 void		*ft_memmove(void *dst, const void *src, size_t len);

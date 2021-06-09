@@ -27,7 +27,8 @@ char	*ft_save_the_next(char *s)
 		free(s);
 		return (0);
 	}
-	if (!(str = malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
 		return (0);
 	i++;
 	while (s[i])
@@ -47,7 +48,8 @@ char	*ft_line(char *s)
 		return (0);
 	while (s[i] && s[i] != '\n')
 		i++;
-	if (!(str = malloc(sizeof(char) * (i + 1))))
+	str = malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (0);
 	i = 0;
 	while (s[i] && s[i] != '\n')
@@ -68,15 +70,14 @@ int	get_next_line(int fd, char **line)
 	count = 1;
 	if (fd < 0 || !line || BUFFER_SIZE <= 0)
 		return (-1);
-	if (!(buff = malloc(sizeof(char) * (BUFFER_SIZE + 1))))
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buff)
 		return (-1);
 	while (ft_verific_newline(save) != 1 && count != 0)
 	{
-		if ((count = read(fd, buff, BUFFER_SIZE)) == -1)
-		{
-			free(buff);
+		count = read(fd, buff, BUFFER_SIZE);
+		if (count == -1)
 			return (-1);
-		}
 		buff[count] = '\0';
 		save = ft_strjoin(save, buff);
 	}
