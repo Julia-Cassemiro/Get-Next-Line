@@ -13,8 +13,6 @@
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
-# define OPEN_MAX 256
-
 # include <unistd.h>
 # include <stdlib.h>
 
