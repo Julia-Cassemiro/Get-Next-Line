@@ -6,12 +6,13 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:28:18 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/09 12:28:21 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/09 12:54:15 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# define OPEN_MAX 256
 
 # include <unistd.h>
 # include <stdlib.h>
