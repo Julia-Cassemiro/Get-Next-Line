@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:27:57 by jgomes-c          #+#    #+#             */
-/*   Updated: 2021/06/09 15:19:04 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2021/06/09 15:29:03 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ char	*ft_line(char *s)
 int	get_next_line(int fd, char **line)
 {
 	char		*buff;
-	static char	*save;
+	static char	*save[OPEN_MAX];
 	int			count;
 
 	buff = ft_verific_buff(fd, line);
 	if (!buff)
 		return (-1);
 	count = 1;
-	while (ft_verific_newline(save) != 1 && count != 0)
+	while (ft_verific_newline(save[fd]) != 1 && count != 0)
 	{
 		count = read(fd, buff, BUFFER_SIZE);
 		if (count == -1)
@@ -82,11 +82,11 @@ int	get_next_line(int fd, char **line)
 			return (-1);
 		}
 		buff[count] = '\0';
-		save = ft_strjoin(save, buff);
+		save[fd] = ft_strjoin(save[fd], buff);
 	}
 	free(buff);
-	*line = ft_line(save);
-	save = ft_save_the_next(save);
+	*line = ft_line(save[fd]);
+	save[fd] = ft_save_the_next(save[fd]);
 	if (count == 0)
 		return (0);
 	return (1);

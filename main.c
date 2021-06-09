@@ -31,7 +31,7 @@ int    main(void)
     get_next_line(fd3, &line);
     printf("%s\n", line);
     free(line);
-    get_next_line(fd2, &line);
+    get_next_line(fd1, &line);
     printf("%s\n", line);
 
 
